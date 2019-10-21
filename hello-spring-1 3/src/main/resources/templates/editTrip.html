@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container">
+    <form method="POST"
+          th:action="@{/editTrip}"
+          th:object="${tripDTO}"
+          enctype="multipart/form-data"
+          autocomplete="off">
+
+        <input type="hidden" id="id" th:field="*{id}"/>
+        <div class="row" style="display:inline">
+            <label for="title">Title:</label>
+            <input class="form-control-sm" type="text" id="title" th:field="*{title}"/>
+        </div>
+        <div class="row" style="display:inline">
+            <label for="description">Description:</label>
+            <input class="form-control-sm" type="text" id="description" th:field="*{description}"/>
+        </div>
+
+        <div class="row">
+            <div class="column col-md-5">
+                <div class="row">
+                    <img th:src="*{'/img/' + id + '/0'}" width="300" height="300">
+                </div>
+                <div class="row">
+                    <input type="file" name="photo1"/>
+                </div>
+                <div class="row">
+                    <label for="title">Photo 1 Title:</label>
+                    <input type="text" id="photo1Title" th:field="*{photo1Title}"/>
+                </div>
+                <div class="row">
+                    <label for="description">Photo 1 Description:</label>
+                    <input type="text" id="photo1Description" th:field="*{photo1Description}"/>
+                </div>
+            </div>
+            <div class="column col-md-5">
+                <div class="row">
+                    <img th:src="*{'/img/' + id + '/1'}" width="300" height="300">
+                </div>
+                <div class="row">
+                    <input type="file" name="photo2"/>
+                </div>
+                <div class="row">
+                    <label for="title">Photo 2 Title:</label>
+                    <input type="text" id="photo2Title" th:field="*{photo2Title}"/>
+                </div>
+                <div class="row">
+                    <label for="description">Photo 2 Description:</label>
+                    <input type="text" id="photo2Description" th:field="*{photo2Description}"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="display:inline">
+            <label for="startDate">Start Date</label>
+            <label class="input">
+                <i class="icon-append fa fa-calendar"></i>
+                <input type="date" name="startDate" id="startDate" th:field="*{startDate}"
+                       class="form-control margin-bottom-20">
+                </input>
+            </label>
+            <label for="endDate">End Date</label>
+            <label class="input">
+                <i class="icon-append fa fa-calendar"></i>
+                <input type="date" name="endDate" id="endDate" th:field="*{endDate}"
+                       class="form-control margin-bottom-20">
+                </input>
+            </label>
+        </div>
+        <input type="submit" value="Edit"/>
+
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="float:right">
+    <form align="right" name="form1" method="post" action="/afara">
+        <label class="logoutLblPos">
+            <input name="submit2" type="submit" id="submit2" value="log out">
+        </label>
+    </form>
+</div>
+<div style="float:right">
+<form action="/userDetails" method="get">
+<input type="submit" value="userDetails" class="btn btn-sm btn-info btn-block" />
+</form>
+</div>
+<table id="t01">
+    <tr>
+        <th>ID</th>
+        <th>Trip Name</th>
+        <th>Description</th>
+        <th>Action</th>
+    </tr>
+    <tr th:each="TripsDTO : ${tripsDTOList}">
+        <td th:text="${TripsDTO.id}">id</td>
+        <td th:text="${TripsDTO.title}">title</td>
+        <td th:text="${TripsDTO.description}">description</td>
+        <td>
+            <a th:href="@{/deleteTrip/{id}(id=${TripsDTO.id})}" class="btn btn-danger">Delete</a>
+        </td>
+        <td>
+            <a th:href="@{/details/{id}(id=${TripsDTO.id})}" class="btn btn-danger">Details</a>
+        </td>
+        <td>
+            <a th:href="@{/editTrip/{id}(id=${TripsDTO.id})}" class="btn btn-primary">Edit</a>
+        </td>
+    </tr>
+</table>
+<form action="/addTrip" method="get">
+    <input type="submit" value="Add Trip" />
+</form>
+<!--<button>-->
+<!--<form method="POST"-->
+<!--      action="/afara">-->
+<!--    <input class="btn btn-sm btn-danger btn-block" type="submit" value="Log out!"/>-->
+<!--</form>-->
+<!--</button>-->
+</body>
+</html>

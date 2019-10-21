@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container">
+    <form method="POST"
+          th:action="@{/userDetails}"
+          th:object="${userDTO}"
+          autocomplete="off">
+        <input type="hidden" id="id" th:field="*{id}"/>
+
+        <div class="row" style="display:inline">
+            <label for="firstName">First Name:</label>
+            <input class="form-control-sm" type="text" id="firstName" th:field="*{firstName}"/>
+        </div>
+        <div class="row" style="display:inline">
+            <label for="lastName">Last Name:</label>
+            <input class="form-control-sm" type="text" id="lastName" th:field="*{lastName}"/>
+        </div>
+        <div class="row" style="display:inline">
+            <label for="city">City:</label>
+            <input class="form-control-sm" type="text" id="city" th:field="*{city}"/>
+        </div>
+        <div class="row" style="display:inline">
+            <label for="adress">Adress:</label>
+            <input class="form-control-sm" type="text" id="adress" th:field="*{adress}"/>
+        </div>
+        <div class="row" style="display:inline">
+            <label for="phoneNumber">Phone Number:</label>
+            <input class="form-control-sm" type="text" id="phoneNumber" th:field="*{phoneNumber}"/>
+        </div>
+        <input type="submit" value="Edit"/>
+
+    </form>
+</div>
+
+</body>
+</html>

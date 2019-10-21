@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>Hello Spring</title>
+</head>
+
+<body>
+    <form method="POST"
+          th:action="@{/hiPerson}"
+          th:object="${person}"
+          enctype="multipart/form-data"
+          autocomplete="off">
+        <label for="fName">First name:</label>
+        <input type="text" id="fName" th:field="*{firstName}"/>
+
+        <label for="lName">Last name:</label>
+        <input type="text" id="lName" th:field="*{lastName}"/><br/>
+        <input type="file" name="file" /><br/>
+        <input type="submit" value="Say HI"/>
+    </form>
+</body>
+
+</html>

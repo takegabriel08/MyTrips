@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="GET"
+      th:action="@{/}"
+      th:object="${tripDTO}"
+      enctype="multipart/form-data"
+      autocomplete="off">
+
+    <label >Title:</label>
+    <span name="title" th:text="*{title}"/>
+    <br/>
+    <label >Description:</label>
+    <span name="description" th:text="*{description}"/>
+    <br/>
+    <img th:src="*{'/img/' + id + '/0'}" width="300" height="300">
+    <br/>
+    <label >Photo 1 Title:</label>
+    <span name="photo1title" th:text="*{photo1Title}"/>
+    <br/>
+    <label >Photo 1 Description:</label>
+    <span name="photo1description" th:text="*{photo1Description}"/>
+    <br/>
+    <img th:src="*{'/img/' + id + '/1'}" width="300" height="300">
+    <br/>
+    <label >Photo 2 Title:</label>
+    <span name="photo2title" th:text="*{photo2Title}"/>
+    <br/>
+    <label >Photo 2 Description:</label>
+    <span name="photo2description" th:text="*{photo2Description}"/>
+    <br/>
+    <input type="submit" value="home"/>
+</form>
+
+</body>
+</html>

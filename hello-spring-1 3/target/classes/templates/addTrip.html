@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--  jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+    <!-- Bootstrap Date-Picker Plugin -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="POST"
+      th:action="@{/addTrip}"
+      th:object="${tripDTO}"
+      enctype="multipart/form-data"
+      autocomplete="off">
+
+    <label for="title">Title:</label>
+    <input type="text" id="title" th:field="*{title}"/><br/>
+    <label for="description">Description:</label>
+    <input type="text" id="description" th:field="*{description}"/><br/>
+
+    <input type="file" name="photo1"  /><br/>
+    <label for="title">Photo 1 Title:</label>
+    <input type="text" id="photo1Title" th:field="*{photo1Title}"/><br/>
+    <label for="description">Photo 1 Description:</label>
+    <input type="text" id="photo1Description" th:field="*{photo1Description}"/><br/>
+
+    <input type="file" name="photo2"  /><br/>
+    <label for="title">Photo 2 Title:</label>
+    <input type="text" id="photo2Title" th:field="*{photo2Title}"/><br/>
+    <label for="description">Photo 2 Description:</label>
+    <input type="text" id="photo2Description" th:field="*{photo2Description}"/><br/>
+    <br />
+    <label for="startDate">Start Date</label>
+    <label class="input">
+        <i class="icon-append fa fa-calendar"></i>
+        <input type="date" name="startDate" id="startDate" th:field="*{startDate}" class="form-control margin-bottom-20">
+        </input>
+    </label>
+    <br />
+    <label for="endDate">End Date</label>
+    <label class="input">
+        <i class="icon-append fa fa-calendar"></i>
+        <input type="date" name="endDate" id="endDate" th:field="*{endDate}" class="form-control margin-bottom-20">
+        </input>
+    </label>
+    <br />
+    <input type="submit" value="Add"/>
+</form>
+
+</body>
+</html>

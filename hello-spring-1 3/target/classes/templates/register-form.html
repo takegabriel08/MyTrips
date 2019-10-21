@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
+</head>
+<body>
+<div class="container">
+
+    <form class="form-signin" method="post" th:object="${user}" action="/register">
+        <h2 class="form-signin-heading">Inregistreaza-te!</h2>
+        <p>
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" id="username" th:field="*{username}" class="form-control" placeholder="Username" required autofocus>
+        </p>
+        <p>
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" th:field="*{password}" class="form-control" placeholder="Password" required>
+        </p>
+        <p>
+            <label for="confirmPassword" class="sr-only">Confirm Password</label>
+            <input type="password" id="confirmPassword" th:field="*{confirmPassword}" class="form-control" placeholder="Confirm password" required>
+        </p>
+        <p>
+            <label for="firstName" class="sr-only">First Name</label>
+            <input type="text" id="firstName" th:field="*{firstName}" class="form-control" placeholder="firstName"
+                   required>
+        </p>
+        <p>
+            <label for="lastName" class="sr-only">Last Name</label>
+            <input type="text" id="lastName" th:field="*{lastName}" class="form-control" placeholder="lastName"
+                   required>
+        </p>
+        <p>
+            <label for="city" class="sr-only">City</label>
+            <input type="text" id="city" th:field="*{city}" class="form-control" placeholder="city"
+                   required>
+        </p>
+        <p>
+            <label for="adress" class="sr-only">Adress</label>
+            <input type="text" id="adress" th:field="*{adress}" class="form-control" placeholder="adress"
+                   required>
+        </p>
+        <p>
+            <label for="phoneNumber" class="sr-only">Phone Number</label>
+            <input type="text" id="phoneNumber" th:field="*{phoneNumber}" class="form-control" placeholder="phoneNumber"
+                   required>
+        </p>
+
+        <input type="submit" value="Register" class="btn btn-lg btn-info btn-block" />
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
